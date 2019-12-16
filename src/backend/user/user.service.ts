@@ -12,6 +12,10 @@ export class UserService {
     private readonly userModel: Repository<User>,
   ) {}
 
+  async getUsers(): Promise<User[]> {
+    return this.userModel.find();
+  }
+
   async checkUser(body): Promise<User> {
     return this.userModel.findOne(body);
   }

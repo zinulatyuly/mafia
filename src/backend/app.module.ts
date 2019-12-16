@@ -7,6 +7,7 @@ import { UserModule } from './user/user.module';
 import { AppController } from './app.controller';
 
 import { AppService } from './app.service';
+import { AppGateway } from './app.gateway';
 
 @Module({
   imports: [
@@ -14,7 +15,7 @@ import { AppService } from './app.service';
     UserModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, AppGateway],
 })
 export class AppModule {
   constructor(private readonly connection: Connection) {}
